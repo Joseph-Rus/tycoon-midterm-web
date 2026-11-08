@@ -1,0 +1,13 @@
+[
+  {"model": "game.nodetype", "pk": 1, "fields": {"name": "Lemonade Stand", "base_cost": "10.00", "base_income": "1.00"}},
+  {"model": "game.nodetype", "pk": 2, "fields": {"name": "Farm", "base_cost": "100.00", "base_income": "8.00"}},
+  {"model": "game.nodetype", "pk": 3, "fields": {"name": "Mine", "base_cost": "1100.00", "base_income": "47.00"}},
+  {"model": "game.nodetype", "pk": 4, "fields": {"name": "Factory", "base_cost": "12000.00", "base_income": "260.00"}},
+  {"model": "game.nodetype", "pk": 5, "fields": {"name": "Bank", "base_cost": "130000.00", "base_income": "1400.00"}},
+
+  {"model": "game.upgrade", "pk": 1, "fields": {"name": "Fresh Lemons", "node_type": 1, "cost": "100.00", "multiplier": "2.00"}},
+  {"model": "game.upgrade", "pk": 2, "fields": {"name": "Better Tractors", "node_type": 2, "cost": "1000.00", "multiplier": "2.00"}},
+  {"model": "game.upgrade", "pk": 3, "fields": {"name": "Bigger Drills", "node_type": 3, "cost": "11000.00", "multiplier": "2.00"}},
+  {"model": "game.upgrade", "pk": 4, "fields": {"name": "Assembly Line", "node_type": 4, "cost": "120000.00", "multiplier": "2.00"}},
+  {"model": "game.upgrade", "pk": 5, "fields": {"name": "Vault Expansion", "node_type": 5, "cost": "1300000.00", "multiplier": "2.00"}}
+]
