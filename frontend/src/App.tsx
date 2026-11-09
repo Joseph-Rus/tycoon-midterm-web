@@ -1,18 +1,8 @@
 import { useGame } from './hooks/useGame'
+import GamePage from './pages/GamePage'
 import LoginPage from './pages/LoginPage'
 
 export default function App() {
-  const { loggedIn, player, logout } = useGame()
-
-  if (!loggedIn) {
-    return <LoginPage />
-  }
-
-  return (
-    <main>
-      <h1>Tycoon</h1>
-      <p>Welcome {player?.username}</p>
-      <button onClick={logout}>Log out</button>
-    </main>
-  )
+  const { loggedIn } = useGame()
+  return loggedIn ? <GamePage /> : <LoginPage />
 }
