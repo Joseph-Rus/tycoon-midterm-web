@@ -1,4 +1,5 @@
 import ClickButton from '../components/ClickButton'
+import MoneyTicker from '../components/MoneyTicker'
 import NodeCard from '../components/NodeCard'
 import UpgradeCard from '../components/UpgradeCard'
 import { formatMoney } from '../format'
@@ -30,7 +31,7 @@ export default function GamePage() {
       </header>
 
       <section className="bank" aria-label="Your money">
-        <p className="balance">{formatMoney(player.balance)}</p>
+        <MoneyTicker balance={player.balance} incomePerSecond={player.income_per_second} />
         <p>{formatMoney(player.income_per_second)} per second</p>
         <ClickButton onClick={click} />
       </section>

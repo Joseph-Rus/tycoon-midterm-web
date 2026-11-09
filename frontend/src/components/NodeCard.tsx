@@ -1,4 +1,5 @@
 import { formatMoney } from '../format'
+import { useScaledCost } from '../hooks/useScaledCost'
 
 interface Props {
   name: string
@@ -9,7 +10,7 @@ interface Props {
 }
 
 export default function NodeCard({ name, baseCost, baseIncome, quantity, onBuy }: Props) {
-  const cost = Math.round(baseCost * 1.15 ** quantity * 100) / 100
+  const cost = useScaledCost(baseCost, quantity)
 
   return (
     <article className="card">
