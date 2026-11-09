@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'game',
 ]
 
@@ -75,6 +76,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'main_server.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    # send money as numbers instead of strings so the frontend can do math with it
+    'COERCE_DECIMAL_TO_STRING': False,
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
@@ -83,6 +95,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        # take the write lock at the start so two buys at once wait instead of failing
+        'OPTIONS': {'transaction_mode': 'IMMEDIATE'},
     }
 }
 
