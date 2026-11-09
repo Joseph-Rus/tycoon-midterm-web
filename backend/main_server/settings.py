@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'game',
 ]
 
@@ -76,6 +77,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'main_server.wsgi.application'
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
     # send money as numbers instead of strings so the frontend can do math with it
     'COERCE_DECIMAL_TO_STRING': False,
 }
