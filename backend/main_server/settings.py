@@ -75,6 +75,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'main_server.wsgi.application'
 
+REST_FRAMEWORK = {
+    # send money as numbers instead of strings so the frontend can do math with it
+    'COERCE_DECIMAL_TO_STRING': False,
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
