@@ -95,6 +95,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        # take the write lock at the start so two buys at once wait instead of failing
+        'OPTIONS': {'transaction_mode': 'IMMEDIATE'},
     }
 }
 

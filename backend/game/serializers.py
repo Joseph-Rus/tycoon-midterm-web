@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 
-from .models import NodeType, Player, Upgrade
+from .models import NodeType, OwnedNode, Player, Upgrade
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -32,3 +32,20 @@ class UpgradeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Upgrade
         fields = ['id', 'name', 'node_type', 'cost', 'multiplier']
+
+
+class OwnedNodeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OwnedNode
+        fields = ['node_type', 'quantity']
+
+
+class PlayerSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(source='user.username', read_only=True)
+    income_per_second = serializers.DecimalField(max_digits=20, decimal_places=2, read_only=True)
+    nodes = OwnedNodeSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Player
+        fields = ['username', 'balance', 'income_per_second', 'last_collected', 'nodes', 'upgrades']
+        read_only_fields = fields
