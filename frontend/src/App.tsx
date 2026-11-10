@@ -1,3 +1,8 @@
+import { useGame } from './hooks/useGame'
+import GamePage from './pages/GamePage'
+import LoginPage from './pages/LoginPage'
+
 export default function App() {
-  return <h1>Tycoon</h1>
+  const { loggedIn } = useGame()
+  return loggedIn ? <GamePage /> : <LoginPage />
 }
