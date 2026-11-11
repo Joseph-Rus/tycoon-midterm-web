@@ -53,7 +53,7 @@ Step 2: log in with the account you just made or one you made before
 Step 3: play the game
 
 
-## Features:
+## 15 Features:
 
 * Account registration with Django password validation
 * Token-based login
@@ -70,6 +70,9 @@ Step 3: play the game
 * Live-ticking balance isolated in its own component
 * Admin-only create/edit/delete of businesses and upgrades using a role guard as well as Django admin
 * Toast notifications form field errors, and an error boundary
+
+## Tech Features:
+
 * Model relationships such as one-to-one such as player to user foreign key and many-to-many
 * No N+1 queries when loading player data
 * Model validation for minimum values on costs and a unique player and business constraint
