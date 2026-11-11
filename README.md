@@ -9,6 +9,8 @@ Step 1: clone the repo
 ```
 git clone https://github.com/Joseph-Rus/tycoon-midterm-web.git
 cd tycoon-midterm-web
+
+cp .env.example .env
 ```
 
 Step 2: set up the backend (only the first time)
