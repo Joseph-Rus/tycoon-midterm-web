@@ -14,6 +14,8 @@ cd tycoon-midterm-web
 
 Step 2: set up the backend (only the first time)
 
+You will need Python 3.12 or newer and Node.js installed.
+
 ```
 cd backend
 cp .env.example .env
@@ -35,7 +37,7 @@ python manage.py runserver
 Step 4: open another terminal, go into the frontend folder and start it
 
 ```
-cd frontend
+cd tycoon-midterm-web/frontend
 npm install
 npm run dev
 ```
